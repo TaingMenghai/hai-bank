@@ -1,0 +1,46 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+
+  &__header{
+    font-size: 4.5rem;
+    line-height: 1.25;
+  }
+
+  &__form {
+    font-size: 2rem;
+    color: inherit;
+    margin: 0 auto;
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__input {
+    padding: 1rem;
+    font-size: 2rem;
+
+    &:focus {
+      outline: 2px solid $color-green;
+      border: 2px solid $color-green;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+}

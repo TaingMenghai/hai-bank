@@ -1,0 +1,96 @@
+#section--3 {
+  position: relative;
+}
+.slider {
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  &__btn {
+    border: none;
+    color: inherit;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: $color-white-opacity;
+    font-size: 4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--left {
+      left: 6%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--right {
+      right: 6%;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  height: 50rem;
+  width: 100%;
+  transition: all .5s;
+  @include flexCenter;
+}
+
+.testimonial {
+  width: 70%;
+  position: relative;
+
+  &::before {
+    content: '\201C';
+    display: block;
+    font-size: 20rem;
+    position: absolute;
+    top: -6.7rem;
+    left: -8.8rem;
+    color: $color-green;
+    line-height: 1;
+  }
+
+  &__text {
+    font-size: 2rem;
+
+  }
+
+  &__author {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    grid-template-rows: max-content max-content;
+    grid-column-gap: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 50%;
+
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+
+  &__name {
+    font-size: 2rem;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }   
+
+  &__location {
+    font-size: 1.8rem;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+}

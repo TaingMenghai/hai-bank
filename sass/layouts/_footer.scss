@@ -1,0 +1,56 @@
+.footer {
+	background-color: $color-grey-dark;
+	border-top: 1px solid $color-grey-dark-1;
+	padding: 10rem;
+	text-align: center;
+
+	&__nav {
+		text-transform: capitalize;
+		list-style: none;
+		margin-bottom: 2rem;
+
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: min-content max-content;
+		grid-row-gap: 2rem;
+		justify-content: center;
+
+		@include respond(tab-land) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@include respond(phone) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+	}
+
+	&__link {
+		color: white;
+		font-size: 2rem;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			box-shadow: 0 1rem 2rem rgba(black, 0.4);
+			transform: scale(1.1);
+			color: $color-green	;
+		}
+	}
+
+	&__logo {
+		margin-bottom: 2rem;
+		width: 8rem;
+	}
+
+	&__copyright {
+		color: $color-grey-light-1;
+		font-size: 1.8rem;
+	}
+}
+
+.twitter-link {
+	margin-right: 0;
+}

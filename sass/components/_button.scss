@@ -1,0 +1,41 @@
+.btn {
+  background-color: $color-green;
+  padding: 2rem 4.5rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  transition: all .3s;
+
+  @include btn;
+
+  &:hover {
+    background-color: $color-green-dark;
+  }
+
+  &--text {
+    display: inline-block;
+    border: none;
+    font-size: 1.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: $color-green;
+    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+    background-color: transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &--close-modal {
+    background-color: transparent;
+    font-size: 4rem;
+    color: inherit;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    @include btn
+  }
+}

@@ -1,0 +1,40 @@
+section {
+  padding: 15rem 0;
+	border-top: 1px solid $color-grey-light;
+
+  transition: transform 1s opacity 1s;
+
+  @include respond (tab-port) {
+    padding: 7rem 0;
+  }
+}
+
+//////////////////
+// TITLE CONTAINER
+.section__title {
+  max-width: 80rem;
+  margin: 0 auto 8rem auto;
+
+  @include respond(tab-port) {
+    padding: 0 5rem;
+  }
+}
+
+.section__header {
+  font-weight: 400;
+  font-size: 4rem;
+  color: white;
+  line-height: 1.25;
+}
+
+.section {
+  padding: 15rem 3rem;
+  border-top: 1px solid #ddd;
+
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}

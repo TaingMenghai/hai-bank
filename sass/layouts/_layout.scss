@@ -1,0 +1,173 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 9rem;
+	width: 100%; // full nav
+	padding: 0 6rem;
+	z-index: 100;
+	position: relative;
+
+	&.sticky {
+		position: fixed;
+		background-color: rgba(white, .95);
+
+		@include respond(tab-port) {
+			background-color: rgba($color-green, .95);
+		}
+	}
+
+	// responsive nav
+	@include respond(tab-port) {
+		padding: 2rem 0;
+		background-color: $color-green;
+
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	&__logo {
+		height: 5rem;
+
+		@include respond(tab-port) {
+			margin-left: 2rem;
+		}
+	}
+
+	&__links {
+		list-style: none;
+		display: flex;
+		align-items: center;
+
+		@include respond(tab-port) {
+			display: none;
+			background-color: $color-green;
+
+			width: 100%;
+			flex-direction: column;
+			padding: 4rem;
+			margin-top: 20rem;
+		}
+
+		&.active {
+			display: flex;
+		}
+	}
+
+	&__item {
+		margin-left: 4rem;
+	}
+
+	&__link:link,
+	&__link:visited {
+		text-decoration: none;
+		color: inherit;
+		font-size: 2rem;
+		font-weight: 400;
+		display: block;
+
+		@include respond(tab-port) {
+			color: white;
+			padding: 1.5rem;
+		}
+	}
+
+	&__link--btn:link,
+	&__link--btn:visited {
+		padding: 0.8rem 2.5rem;
+		background-color: $color-green;
+		border-radius: 10rem;
+		transition: all .3s;
+
+		@include respond(tab-port) {
+			background-color: $color-pink-light;
+			transition: all .3s;
+		}
+
+		&:hover,
+		&:active {
+			background-color: $color-green-dark;
+
+			@include respond(tab-port) {
+				background-color: $color-pink;
+			}
+		}
+	}
+
+	&__toggle {
+		position: absolute;
+		right: 5rem;
+		display: none; // show small screen
+
+		flex-direction: column;
+		justify-content: space-between;
+		width: 3rem;
+		height: 2rem;
+
+		@include respond(tab-port) {
+			display: flex;
+		}
+
+		&--bar {
+			height: 3px;
+			width: 100%;
+			background-color: white;
+			border-radius: 1rem;
+		}
+	}
+}
+
+.header {
+	padding: 0 3rem;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include respond(tab-port) {
+		padding: 0;
+	}
+
+	&__title {
+		flex: .8; // to fill 100vh
+		max-width: 115rem;
+		height: min-content;
+
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		row-gap: 3rem;
+		align-content: center; // both center ver
+		justify-content: center; // both center hor
+
+		align-items: start;
+		justify-items: start;
+
+		@include respond(tab-port) {
+			// margin-top: 10rem;
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.5fr 0.5fr;
+			justify-content: center;
+			align-items: center;
+			justify-items: center;
+		}
+	}
+
+	&__img {
+		grid-column: 2 / 3;
+		width: 100%;
+
+		@include respond(tab-port) {
+			width: 60%;
+			margin: 0 auto;
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+		}
+	}
+}
+
+.heading-container {
+	@include respond(tab-port) {
+		text-align: center;
+	}
+}
